@@ -140,6 +140,7 @@ private fun CardContent(name: String) {
                     fontWeight = FontWeight.ExtraBold
                 )
             )
+
             if (expanded) {
                 Text(
                     text = ("Composem ipsum color sit lazy, " +
