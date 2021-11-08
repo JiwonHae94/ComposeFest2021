@@ -5,13 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
 
 class MainActivity : ComponentActivity() {
@@ -30,11 +30,31 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun LayoutsCodeLab() {
-    Scaffold { innerPadding ->
-        Column(modifier = Modifier.padding(innerPadding)) {
-            Text(text = "Hi there!")
-            Text(text = "Thanks for going through the Layouts codelab")
+    Scaffold(
+        topBar = {
+            TopAppBar (
+                title = {
+                    Text("LayoutsCodelab")
+                },
+                actions = {
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(Icons.Filled.Favorite, contentDescription = null)
+                    }
+                }
+            )
         }
+
+    ) { innerPadding ->
+        BodyContent(Modifier.padding(innerPadding))
+    }
+}
+
+
+@Composable
+fun BodyContent(modifier : Modifier = Modifier){
+    Column(modifier = modifier.padding(8.dp)) {
+        Text(text = "Hi there!")
+        Text(text = "Thanks for going through the Layouts codelab")
     }
 }
 
