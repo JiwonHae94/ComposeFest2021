@@ -7,7 +7,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.jiwon.jetpackcomposelayouts"
+        applicationId "com.jiwon.layoutscodelab"
         minSdk 25
         targetSdk 31
         versionCode 1
