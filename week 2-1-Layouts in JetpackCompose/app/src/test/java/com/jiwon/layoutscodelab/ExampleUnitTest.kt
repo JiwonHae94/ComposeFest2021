@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts
+package com.jiwon.layoutscodelab
 
 import org.junit.Test
 

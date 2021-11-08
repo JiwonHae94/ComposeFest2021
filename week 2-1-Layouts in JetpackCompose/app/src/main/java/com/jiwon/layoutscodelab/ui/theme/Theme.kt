@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts.ui.theme
+package com.jiwon.layoutscodelab.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -28,7 +28,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun JetpackComposeLayoutsTheme(
+fun LayoutsCodelabTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable() () -> Unit
 ) {

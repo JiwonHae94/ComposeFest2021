@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts.model
+package com.jiwon.layoutscodelab.model
 
 data class Photographer(
     val name : String,

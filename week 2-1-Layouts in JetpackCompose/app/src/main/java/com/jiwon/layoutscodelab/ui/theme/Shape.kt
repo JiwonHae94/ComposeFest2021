@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts.ui.theme
+package com.jiwon.layoutscodelab.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Shapes

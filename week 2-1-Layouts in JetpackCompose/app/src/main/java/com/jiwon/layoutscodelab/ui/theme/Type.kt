@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts.ui.theme
+package com.jiwon.layoutscodelab.ui.theme
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

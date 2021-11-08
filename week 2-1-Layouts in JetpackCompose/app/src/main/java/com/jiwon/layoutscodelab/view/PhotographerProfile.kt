@@ -1,4 +1,4 @@
-package com.jiwon.jetpackcomposelayouts.view
+package com.jiwon.layoutscodelab.view
 
 import android.util.Log
 import androidx.compose.foundation.background
@@ -18,8 +18,8 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.jiwon.jetpackcomposelayouts.model.Photographer
-import com.jiwon.jetpackcomposelayouts.ui.theme.JetpackComposeLayoutsTheme
+import com.jiwon.layoutscodelab.model.Photographer
+import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
 
 
 private val TAG = "PhotographerProfile"
@@ -66,7 +66,7 @@ fun PhotographerProfile(
 @Preview
 @Composable
 fun PhotographerProfile_Preview(){
-    JetpackComposeLayoutsTheme {
+    LayoutsCodelabTheme {
         PhotographerProfile(photographer = Photographer(
             name = "Alfred Sisley",
             lastSeenOnline = "3 minutes ago"
