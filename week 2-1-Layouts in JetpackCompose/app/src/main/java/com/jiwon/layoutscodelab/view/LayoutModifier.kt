@@ -11,7 +11,7 @@ import androidx.compose.ui.layout.layout
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
+import com.jiwon.layoutscodelab.view.ui.theme.LayoutsCodelabTheme
 
 
 //fun Modifier.customLayoutModifier() = Modifier.layout { measurable, constraints ->

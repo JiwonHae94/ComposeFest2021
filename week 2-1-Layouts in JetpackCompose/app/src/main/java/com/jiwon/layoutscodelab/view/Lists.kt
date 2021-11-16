@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
+import com.jiwon.layoutscodelab.view.ui.theme.LayoutsCodelabTheme
 import kotlinx.coroutines.launch
 
 @Composable

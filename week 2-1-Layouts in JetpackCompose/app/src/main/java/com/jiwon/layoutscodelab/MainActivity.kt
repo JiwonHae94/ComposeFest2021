@@ -3,22 +3,21 @@ package com.jiwon.layoutscodelab
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
-import com.jiwon.layoutscodelab.view.ImageList
-import com.jiwon.layoutscodelab.view.ScrollingList
-import kotlinx.coroutines.launch
+import com.jiwon.layoutscodelab.view.Chip
+import com.jiwon.layoutscodelab.view.StaggeredGrid
+import com.jiwon.layoutscodelab.view.ui.theme.LayoutsCodelabTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,12 +26,19 @@ class MainActivity : ComponentActivity() {
             LayoutsCodelabTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    LayoutsCodeLab()
+                    BodyContent()
                 }
             }
         }
     }
 }
+
+val topics = listOf(
+    "Arts & Crafts", "Beauty", "Books", "Business", "Comics", "Culinary",
+    "Design", "Fashion", "Film", "History", "Maths", "Music", "People", "Philosophy",
+    "Religion", "Social sciences", "Technology", "TV", "Writing"
+)
+
 
 @Composable
 fun LayoutsCodeLab() {
@@ -59,9 +65,17 @@ fun LayoutsCodeLab() {
 
 @Composable
 fun BodyContent(modifier : Modifier = Modifier){
-    Column(modifier = modifier.padding(8.dp)) {
-        Text(text = "Hi there!")
-        Text(text = "Thanks for going through the Layouts codelab")
+//    Column(modifier = modifier.padding(8.dp)) {
+//        Text(text = "Hi there!")
+//        Text(text = "Thanks for going through the Layouts codelab")
+//    }
+
+    Row(modifier = modifier.horizontalScroll(rememberScrollState())){
+        StaggeredGrid(modifier = modifier) {
+            for (topic in topics){
+                Chip(modifier = Modifier.padding(8.dp), text = topic)
+            }
+        }
     }
 }
 
@@ -70,6 +84,6 @@ fun BodyContent(modifier : Modifier = Modifier){
 @Composable
 fun DefaultPreview() {
     LayoutsCodelabTheme {
-        LayoutsCodeLab()
+        BodyContent()
     }
 }

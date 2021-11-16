@@ -1,4 +1,4 @@
-package com.jiwon.layoutscodelab.ui.theme
+package com.jiwon.layoutscodelab.view.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

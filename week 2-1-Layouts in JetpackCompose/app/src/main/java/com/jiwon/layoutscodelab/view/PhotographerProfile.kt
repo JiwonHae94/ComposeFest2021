@@ -19,7 +19,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.jiwon.layoutscodelab.model.Photographer
-import com.jiwon.layoutscodelab.ui.theme.LayoutsCodelabTheme
+import com.jiwon.layoutscodelab.view.ui.theme.LayoutsCodelabTheme
 
 
 private val TAG = "PhotographerProfile"
