@@ -47,7 +47,7 @@ private fun TodoActivityScreen(todoViewModel: TodoViewModel){
     TodoScreen(
         items = todoViewModel.todoItems,
         currentlyEditing = todoViewModel.currentEditItem,
-        onAddItem = todoViewModel::addItem ,
+        onAddItem = todoViewModel::addItem,
         onRemoveItem = todoViewModel::removeItem,
         onStartEdit = todoViewModel::onEditItemSelected,
         onEditItemChange = todoViewModel::onEditItemChange,
