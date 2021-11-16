@@ -35,8 +35,8 @@ class TodoViewModel : ViewModel() {
         private set
 
     // state
-    val currentEditItem : TodoItem?
-        get() = todoItems.get(currentEditPosition)
+    val currentEditItem: TodoItem?
+        get() = todoItems.getOrNull(currentEditPosition)
 
     fun onEditItemSelected(item : TodoItem){
         currentEditPosition = todoItems.indexOf(item)
