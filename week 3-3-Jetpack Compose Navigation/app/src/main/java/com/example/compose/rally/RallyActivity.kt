@@ -32,8 +32,15 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.compose.rally.data.UserData
+import com.example.compose.rally.data.UserData.accounts
+import com.example.compose.rally.data.UserData.bills
+import com.example.compose.rally.ui.accounts.AccountsBody
+import com.example.compose.rally.ui.bills.BillsBody
 import com.example.compose.rally.ui.components.RallyTabRow
+import com.example.compose.rally.ui.overview.OverviewBody
 import com.example.compose.rally.ui.theme.RallyTheme
 
 /**
@@ -53,15 +60,18 @@ class RallyActivity : ComponentActivity() {
 fun RallyApp() {
     RallyTheme {
         val allScreens = RallyScreen.values().toList()
-        var currentScreen by rememberSaveable { mutableStateOf(RallyScreen.Overview) }
         val navController = rememberNavController()
+        val backstackEntry = navController.currentBackStackEntryAsState()
+        val currentScreen = RallyScreen.fromRoute(
+            backstackEntry.value?.destination?.route
+        )
 
         Scaffold(
             topBar = {
                 RallyTabRow(
                     allScreens = allScreens,
                     onTabSelected = { screen -> navController.navigate(screen.name) },
-                    currentScreen = currentScreen
+                    currentScreen = currentScreen,
                 )
             }
         ) { innerPadding ->
@@ -71,21 +81,15 @@ fun RallyApp() {
                 modifier = Modifier.padding(innerPadding)
             ){
                 composable(RallyScreen.Overview.name){
-                    Text(text = RallyScreen.Overview.name)
+                    OverviewBody()
                 }
                 composable(RallyScreen.Accounts.name){
-                    Text(text = RallyScreen.Accounts.name)
+                    AccountsBody(accounts = accounts)
                 }
                 composable(RallyScreen.Bills.name){
-                    Text(text = RallyScreen.Bills.name)
+                    BillsBody(bills = bills)
                 }
             }
         }
     }
-}
-
-@Preview
-@Composable
-fun RallyApp_Preview(){
-    RallyApp()
 }
