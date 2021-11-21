@@ -81,7 +81,10 @@ fun RallyApp() {
                 modifier = Modifier.padding(innerPadding)
             ){
                 composable(RallyScreen.Overview.name){
-                    OverviewBody()
+                    OverviewBody(
+                        onClickSeeAllAccounts = { navController.navigate(RallyScreen.Accounts.name) },
+                        onClickSeeAllBills = { navController.navigate(RallyScreen.Bills.name) }
+                    )
                 }
                 composable(RallyScreen.Accounts.name){
                     AccountsBody(accounts = accounts)
