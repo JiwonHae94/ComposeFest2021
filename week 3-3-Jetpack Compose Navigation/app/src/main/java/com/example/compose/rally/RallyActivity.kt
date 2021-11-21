@@ -60,7 +60,7 @@ fun RallyApp() {
             topBar = {
                 RallyTabRow(
                     allScreens = allScreens,
-                    onTabSelected = { screen -> currentScreen = screen },
+                    onTabSelected = { screen -> navController.navigate(screen.name) },
                     currentScreen = currentScreen
                 )
             }
@@ -73,10 +73,10 @@ fun RallyApp() {
                 composable(RallyScreen.Overview.name){
                     Text(text = RallyScreen.Overview.name)
                 }
-                composable(RallyScreen.Overview.name){
+                composable(RallyScreen.Accounts.name){
                     Text(text = RallyScreen.Accounts.name)
                 }
-                composable(RallyScreen.Overview.name){
+                composable(RallyScreen.Bills.name){
                     Text(text = RallyScreen.Bills.name)
                 }
             }
