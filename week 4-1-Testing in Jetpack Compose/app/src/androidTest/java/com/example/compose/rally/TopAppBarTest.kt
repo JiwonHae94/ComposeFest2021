@@ -1,9 +1,8 @@
 package com.example.compose.rally
 
-import androidx.compose.ui.test.assertIsSelectable
-import androidx.compose.ui.test.assertIsSelected
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithContentDescription
+import androidx.compose.ui.text.toUpperCase
 import com.example.compose.rally.ui.components.RallyTopAppBar
 import org.junit.Rule
 import org.junit.Test
@@ -41,5 +40,21 @@ class TopAppBarTest {
             .assertIsSelected()
     }
 
+    @Test
+    fun rallyTopAppBar_currentLabelExists(){
+        val allScreens = RallyScreen.values().toList()
+        composeTestRule.setContent {
+            RallyTopAppBar(
+                allScreens = allScreens,
+                onTabSelected = { },
+                currentScreen = RallyScreen.Accounts)
+        }
+
+        composeTestRule.onRoot().printToLog("currentLabelExists")
+
+        composeTestRule
+            .onNodeWithContentDescription(RallyScreen.Accounts.name)
+            .assertExists()
+    }
 
 }
